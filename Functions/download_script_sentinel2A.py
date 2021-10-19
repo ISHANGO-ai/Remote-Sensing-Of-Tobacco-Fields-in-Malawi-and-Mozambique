@@ -32,17 +32,26 @@ class sentinel1_download_preprocess():
         
     @classmethod
     def parameters(cls):#fucntions of input required parameters
-        return cls(
-            input(' Enter username:'),
-            input('Enter password:'),
-            input('Startdate yyyy/mm/dd:'),#start_date
-            input('Enddate yyyy/mm/dd:'),#end_date
-            input('query_style:'), #footprint or coordinates
-            input('"Enter path_geoson_file:'),#path where geojson file is stored,
-            input('latitude:'),
-            input('longitude:'),
-            input('download:'), #True or False
-        )  
+        username = input(' Enter username:')
+        password = input('Enter password:')
+        date_1 = input('Startdate yyyy/mm/dd:') #start_date
+        date_2 = input('Enddate yyyy/mm/dd:') #end_date
+        query_style = input('query_style:') #footprint or coordinates
+        
+        lat = None
+        lon = None
+        footprint = None
+        if query_style == 'coordinate':
+            lat = input('latitude:')
+            lon = input('longitude:')
+        elif query_style == 'footprint':
+            footprint = input('"Enter path_geoson_file:') #path where geojson file is stored,
+        else:
+            assert "Define query attribute"          
+
+        download = input('download:') #True or False
+            
+        return cls(username, password, date_1, date_2, query_style, footprint, lat, lon, download)
 
 
     def sentinel1_download(self):
@@ -76,7 +85,7 @@ class sentinel1_download_preprocess():
                 print('No data available online')
 
             print(f"products available online = {len(d)}")
-            data = self.api.download(random.choice(d)) #randomly download
+            #data = self.api.download(random.choice(d)) #randomly download
            
         else:
             print("Define query attribute")
