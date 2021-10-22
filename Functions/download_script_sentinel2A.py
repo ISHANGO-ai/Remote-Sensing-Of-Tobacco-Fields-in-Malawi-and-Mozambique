@@ -4,6 +4,12 @@
 # In[ ]:
 
 
+#pip install sentinelsat
+
+
+# In[ ]:
+
+
 import os
 import datetime
 import gc
@@ -85,13 +91,13 @@ class sentinel1_download_preprocess():
                 print('No data available online')
 
             print(f"products available online = {len(d)}")
-            #data = self.api.download(random.choice(d)) #randomly download
+            data = self.api.download(random.choice(d)) #randomly download
            
         else:
             print("Define query attribute")
                                    
                             
-sentinel1_download_preprocess.parameters().sentinel1_download()                        
+sentinel1_download_preprocess.parameters().sentinel1_download()
 
 
 # In[ ]:
