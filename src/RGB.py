@@ -1,5 +1,4 @@
-"""the visible atmospheric resistant index(VARI) is designed to emphasize vegetetation in the visible portion
- of the spectrum  while mitigating illimunatio differences and atmspheric effects"""
+
 
 import glob
 import numpy as np
@@ -28,12 +27,9 @@ for i in S_sentinel_bands:
         l.append(f.read(1))
 
 arr_st = np.stack(l)
-
-def vari_sentinel (arr_st):
-
-    vari = (arr_st[1] - arr_st[2])/(arr_st[1]+ arr_st[2] - arr_st[0])
-
-    return vari
-VARI = vari_sentinel(arr_st)
-ep.plot_bands(VARI, cmap="RdYlGn", cols=2, vmin=-1, vmax=1, figsize= (10,14),title= 'VARI')
+#RGB composite image with strech
+ep.plot_rgb(arr_st,rgb=(2,1,0),
+stretch=True,
+str_clip=0.2,
+figsize=(10,16))
 plt.show()

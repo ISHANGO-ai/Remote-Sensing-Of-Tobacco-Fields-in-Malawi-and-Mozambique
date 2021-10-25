@@ -1,5 +1,6 @@
-"""the visible atmospheric resistant index(VARI) is designed to emphasize vegetetation in the visible portion
- of the spectrum  while mitigating illimunatio differences and atmspheric effects"""
+"""  The NDWI results from the following equation: Index = (NIR - MIR) / (NIR + MIR) using Sentinel-2 Band 8 (NIR) and Band 12 (MIR). 
+The NDWI is a vegetation index sensitive to the water content of vegetation and is complementary to the NDVI. 
+High NDWI values show a high water content of the vegetation. """
 
 import glob
 import numpy as np
@@ -29,11 +30,11 @@ for i in S_sentinel_bands:
 
 arr_st = np.stack(l)
 
-def vari_sentinel (arr_st):
+def ndwi_sentinel (arr_st):
 
-    vari = (arr_st[1] - arr_st[2])/(arr_st[1]+ arr_st[2] - arr_st[0])
+    ndwi = (arr_st[1] - arr_st[3])/(arr_st[1]+ arr_st[3])
 
-    return vari
-VARI = vari_sentinel(arr_st)
-ep.plot_bands(VARI, cmap="RdYlGn", cols=2, vmin=-1, vmax=1, figsize= (10,14),title= 'VARI')
+    return ndwi
+NDWI = ndwi_sentinel(arr_st)
+ep.plot_bands(NDWI, cmap="RdYlGn", cols=2, vmin=-1, vmax=1, figsize= (10,14),title= 'NDWI')
 plt.show()
