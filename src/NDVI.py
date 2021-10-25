@@ -39,6 +39,16 @@ def ndvi_sentinel(arr_st):
 
 NDVI =ndvi_sentinel(arr_st)
 
-ep.plot_bands(NDVI, cmap="RdYlGn", cols=1, vmin=-1, vmax=1, figsize=(10, 14),title = 'Sentinel2A - Normalized Difference Vegetation Index (NDVI)') 
+#ep.plot_bands(NDVI, cmap="RdYlGn", cols=1, vmin=-1, vmax=1, figsize=(10, 14),title = 'Sentinel2A - Normalized Difference Vegetation Index (NDVI)') 
 
-plt.show()
+#plt.show()
+#the visiblw atmospheric resistant index(VARI) is designed to emphasize vegetetation in the visible portion
+# of the spectrum  while mitigating illimunatio differences and atmspheric effectc
+def vari_sentinel (arr_st):
+
+    vari = arr_st[1] - arr_st[2]/arr_st[1]+ arr_st[2] - arr_st[0]
+
+    return vari
+VARI = vari_sentinel(arr_st)
+ep.plot_bands(VARI, cmap="RdY1Gn", cols=1, vmin=-1, vmax=1, figsize= (10,14),title='VARI')
+plt.show
