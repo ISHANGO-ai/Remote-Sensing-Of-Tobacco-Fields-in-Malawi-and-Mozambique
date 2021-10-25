@@ -1,6 +1,5 @@
-"""" NDVI measures the difference between visible and near-infrared (NIR) light reflectance from vegetation to create
- a snapshot of photosynthetic vigor  """
-
+"""the visible atmospheric resistant index(VARI) is designed to emphasize vegetetation in the visible portion
+ of the spectrum  while mitigating illimunatio differences and atmspheric effects"""
 
 import glob
 import numpy as np
@@ -29,15 +28,13 @@ for i in S_sentinel_bands:
         l.append(f.read(1))
 
 arr_st = np.stack(l)
-def ndvi_sentinel(arr_st):
 
-    ndvi = (arr_st[3] - arr_st[2])/(arr_st[3]+arr_st[2])
-    
-    return ndvi
+def vari_sentinel (arr_st):
 
+    vari = arr_st[1] - arr_st[2]/arr_st[1]+ arr_st[2] - arr_st[0]
 
-NDVI =ndvi_sentinel(arr_st)
-
-ep.plot_bands(NDVI, cmap="RdYlGn", cols=1, vmin=-1, vmax=1, figsize=(10, 14),title = 'Sentinel2A - Normalized Difference Vegetation Index (NDVI)') 
-
+    return vari
+VARI = vari_sentinel(arr_st)
+titles = ["NDVI","VARI"]
+ep.plot_bands(NDVI,VARI, cmap="RdYlGn", cols=2, vmin=-1, vmax=1, figsize= (10,14),title= titles)
 plt.show()
