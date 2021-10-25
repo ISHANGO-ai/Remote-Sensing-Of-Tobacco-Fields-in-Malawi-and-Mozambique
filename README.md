@@ -12,4 +12,4 @@
 
 ### 1.2.1.Download data by reading the instruction in data.txt
 
-    python download_data.py
+    python download_data.py from src
