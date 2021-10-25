@@ -1,3 +1,5 @@
 create account (username and password) on https://scihub.copernicus.eu/dhus
 Create geojson  file by finding the area of interest  https://geojson.io/
 Choose the date frame
+Chose the cloudcoverage percentage
+
