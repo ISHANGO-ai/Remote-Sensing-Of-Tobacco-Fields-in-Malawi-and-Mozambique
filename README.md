@@ -10,6 +10,6 @@
 
 ### 1.2.How to run code
 
-### 1.2.1.Download data by reading the instruction in data.txt
+### 1.2.1.Download  sentinel2A data by reading the instruction in data.txt
 
     python download_data.py from src
