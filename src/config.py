@@ -29,6 +29,7 @@ args = argparse.Namespace(
     # your password
     password = "password",
     # geojson file
-    geojson_file = "tete.geojson"   
+    geojson_file = "tete.geojson",
+    product = 'landsat_tm_c1'  
 
 )
