@@ -10,6 +10,7 @@ import rasterio as rio
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import plotly.graph_objects as go
+from .config import args
 
 np.seterr(divide='ignore', invalid='ignore')
 # Set input directory

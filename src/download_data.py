@@ -5,6 +5,7 @@ import glob
 import geopandas
 import random
 from sentinelsat import SentinelAPI, geojson_to_wkt, read_geojson
+from .config import args
 
 class sentinel1_download_preprocess():
     def __init__(self,username,password,date_1,date_2,query_style,footprint,lat,lon,download):
