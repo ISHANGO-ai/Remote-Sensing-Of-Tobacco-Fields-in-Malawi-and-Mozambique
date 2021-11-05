@@ -30,6 +30,7 @@ args = argparse.Namespace(
     password = "password",
     # geojson file
     geojson_file = "tete.geojson",
+    #name of product of landsat data
     product = 'landsat_tm_c1'  
 
 )
