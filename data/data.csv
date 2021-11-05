@@ -1,0 +1,5 @@
+# read the feature table to train our RandomForest model
+# data taken from ee.FeatureCollection('GOOGLE/EE/DEMOS/demo_landcover_labels')
+
+url = "https://raw.githubusercontent.com/giswqs/geemap/master/examples/data/rf_example.csv"
+df = pd.read_csv(url)
