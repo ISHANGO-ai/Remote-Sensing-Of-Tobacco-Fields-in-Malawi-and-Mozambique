@@ -12,4 +12,4 @@
 
 ### 1.2.1.Download  sentinel2A data by reading the instruction in data.txt
 
-    python download_data.py from src
+    python sentineldownload_data.py from src
