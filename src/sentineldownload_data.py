@@ -27,18 +27,18 @@ class sentinel2_download_preprocess():
         
     @classmethod
     def parameters(cls):#fucntions of input required parameters
-        username = input(' Enter username:')
-        password = input('Enter password:')
-        start_date = input('Startdate yyyy/mm/dd:') #start_date
-        end_date = input('Enddate yyyy/mm/dd:') #end_date
+        args.username = input(' Enter username:')
+        args.password = input('Enter password:')
+        args.start_date = input('Startdate yyyy/mm/dd:') #start_date
+        args.end_date = input('Enddate yyyy/mm/dd:') #end_date
         query_style = input('query_style:') #footprint or coordinates
         
-        latitude = None
-        longitude = None
+        args.latitude = None
+        args.longitude = None
         footprint = None
         if query_style == 'coordinate':
-            latitude = input('latitude:')
-            longitude = input('longitude:')
+            args.latitude = input('latitude:')
+            args.longitude = input('longitude:')
         elif query_style == 'footprint':
             footprint = input('"Enter path_geoson_file:') #path where geojson file is stored,
         else:
@@ -49,22 +49,22 @@ class sentinel2_download_preprocess():
         return cls(query_style, footprint, download)
 
 
-    def sentinel1_download(self):
+    def sentinel2_download(self):
         global download_candidate
         if self.query_style == 'coordinate': #coordinates
-            download_candidate = self.api.query('POINT({0} {1})'.format(self.longitude, self.latitude),
+            download_candidate = self.api.query('POINT({0} {1})'.format(args.longitude, args.latitude),
                                                 date=(self.date_start, self.date_end),
-                                                platformname=self.platformname,
-                                                orbitdirection=self.orbitdirection,
-                                                processinglevel=self.processinglevel,
-                                                cloudcoverpercentage=self.cloudcoverpercentage)
+                                                platformname=args.platformname,
+                                                orbitdirection=args.orbitdirection,
+                                                processinglevel=args.processinglevel,
+                                                cloudcoverpercentage=args.cloudcoverpercentage)
         elif self.query_style == 'footprint': # geojson file
             download_candidate = self.api.query(self.footprint,
                                                  date=(self.date_start, self.date_end),
-                                                platformname=self.platformname,
-                                                orbitdirection=self.orbitdirection,
-                                                processinglevel=self.processinglevel,
-                                                cloudcoverpercentage=self.cloudcoverpercentage)
+                                                platformname=args.platformname,
+                                                orbitdirection=args.orbitdirection,
+                                                processinglevel=args.processinglevel,
+                                                cloudcoverpercentage=args.cloudcoverpercentage)
 
 
             
@@ -80,10 +80,10 @@ class sentinel2_download_preprocess():
                 print('No data available online')
 
             print(f"products available online = {len(d)}")
-            #self.api.download(random.choice(d)) #randomly download
+            self.api.download(random.choice(d)) #randomly download
            
         else:
             print("Define query attribute")
                                    
                             
-sentinel2_download_preprocess.parameters().sentinel1_download()
+sentinel2_download_preprocess.parameters().sentinel2_download()
