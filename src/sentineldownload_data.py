@@ -80,7 +80,7 @@ class sentinel2_download_preprocess():
                 print('No data available online')
 
             print(f"products available online = {len(d)}")
-            data = self.api.download(random.choice(d)) #randomly download
+            #self.api.download(random.choice(d)) #randomly download
            
         else:
             print("Define query attribute")
