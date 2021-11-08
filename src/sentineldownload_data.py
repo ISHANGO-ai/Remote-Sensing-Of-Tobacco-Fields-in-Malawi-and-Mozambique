@@ -5,40 +5,40 @@ import glob
 import geopandas
 import random
 from sentinelsat import SentinelAPI, geojson_to_wkt, read_geojson
-from .config import args
+from config import args
 
-class sentinel1_download_preprocess():
-    def __init__(self,username,password,date_1,date_2,query_style,footprint,lat,lon,download):
-        self.username = username
-        self.password = password
-        self.date_start = datetime.datetime.strptime(date_1, "%Y/%m/%d")
-        self.date_end = datetime.datetime.strptime(date_2, "%Y/%m/%d")
+class sentinel2_download_preprocess():
+    def __init__(self,query_style,footprint,download):
+        self.username = args.username
+        self.password = args.password
+        self.date_start = datetime.datetime.strptime(args.start_date, "%Y/%m/%d")
+        self.date_end = datetime.datetime.strptime(args.end_date, "%Y/%m/%d")
         self.query_style = query_style
         self.footprint = geojson_to_wkt(read_geojson(footprint))
-        self.lat = lat
-        self.lon = lon
+        self.lat = args.latitude
+        self.lon = args.longitude
         self.download = download # you want to download, the default is False, but if you want to continue to download preocess is "True"
             # configurations
-        self.api = SentinelAPI(username, password, 'https://scihub.copernicus.eu/dhus')
-        self.platformname ='Sentinel-2'# sentinel1-1,sentine-2,sentinel-3,sentinel-5P
-        self.orbitdirection = 'DESCENDING'  # ASCENDING, DESCENDING
-        self.processinglevel = 'Level-2A'#L-2A,L-1C
-        self.cloudcoverpercentage = (0,30)# better high %
+        self.api = SentinelAPI(args.username, args.password, 'https://scihub.copernicus.eu/dhus')
+        self.platformname = args.platformname # sentinel1-1,sentine-2,sentinel-3,sentinel-5P
+        self.orbitdirection = args.orbitdirection # ASCENDING, DESCENDING
+        self.processinglevel = args.processinglevel #L-2A,L-1C
+        self.cloudcoverpercentage = args.cloudcoverpercentage # better high %
         
     @classmethod
     def parameters(cls):#fucntions of input required parameters
         username = input(' Enter username:')
         password = input('Enter password:')
-        date_1 = input('Startdate yyyy/mm/dd:') #start_date
-        date_2 = input('Enddate yyyy/mm/dd:') #end_date
+        start_date = input('Startdate yyyy/mm/dd:') #start_date
+        end_date = input('Enddate yyyy/mm/dd:') #end_date
         query_style = input('query_style:') #footprint or coordinates
         
-        lat = None
-        lon = None
+        latitude = None
+        longitude = None
         footprint = None
         if query_style == 'coordinate':
-            lat = input('latitude:')
-            lon = input('longitude:')
+            latitude = input('latitude:')
+            longitude = input('longitude:')
         elif query_style == 'footprint':
             footprint = input('"Enter path_geoson_file:') #path where geojson file is stored,
         else:
@@ -46,13 +46,13 @@ class sentinel1_download_preprocess():
 
         download = input('download:') #True or False
             
-        return cls(username, password, date_1, date_2, query_style, footprint, lat, lon, download)
+        return cls(query_style, footprint, download)
 
 
     def sentinel1_download(self):
         global download_candidate
         if self.query_style == 'coordinate': #coordinates
-            download_candidate = self.api.query('POINT({0} {1})'.format(self.lon, self.lat),
+            download_candidate = self.api.query('POINT({0} {1})'.format(self.longitude, self.latitude),
                                                 date=(self.date_start, self.date_end),
                                                 platformname=self.platformname,
                                                 orbitdirection=self.orbitdirection,
@@ -86,4 +86,4 @@ class sentinel1_download_preprocess():
             print("Define query attribute")
                                    
                             
-sentinel1_download_preprocess.parameters().sentinel1_download()
+sentinel2_download_preprocess.parameters().sentinel1_download()

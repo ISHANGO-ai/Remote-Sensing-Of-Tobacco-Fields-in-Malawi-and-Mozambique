@@ -15,6 +15,8 @@ args = argparse.Namespace(
     # The level of the processing
     processinglevel = 'Level-2A',
     # set the interval of cloud cover
+    #orbit direction
+    orbitdirection = 'DESCENDING',
     cloudcoverpercentage = (0,100),
     # set the threshold of cloud cover
     threshold_cloudcover = 10,
@@ -25,12 +27,13 @@ args = argparse.Namespace(
     #longitude = 35.529562,
     longitude = 35.529562,
     # your username
-    user = "username",
+    username = "username",
     # your password
     password = "password",
     # geojson file
     geojson_file = "tete.geojson",
     #name of product of landsat data
-    product = 'landsat_tm_c1'  
+    product = 'landsat_tm_c1' ,
+
 
 )
