@@ -1,4 +1,4 @@
-# Access satelitte data(sentine1,sentinel2,sentinel3,sentinel5P, landsat, MODIS)
+# Access satelitte imagery (sentine1,sentinel2,sentinel3,sentinel5P, landsat, MODIS)
 
 ## Land cover classification
 
