@@ -20,12 +20,12 @@ args = argparse.Namespace(
     cloudcoverpercentage = (0,100),
     # set the threshold of cloud cover
     threshold_cloudcover = 10,
-    # latitude of mozambique
-    # latitude = -18.665695, 
-    latitude = -18.665695,
-    # longitude  of mozambique 
+    # latitude of tete in mozambique
+    # latitude = -16.1328104, 
+    latitude = -16.1328104,
+    # longitude  of tete in mozambique 
     #longitude = 35.529562,
-    longitude = 35.529562,
+    longitude = 33.6063855,
     # your username
     username = "username",
     # your password
