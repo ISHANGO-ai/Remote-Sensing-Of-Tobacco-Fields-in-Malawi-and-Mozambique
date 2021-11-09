@@ -1,21 +1,24 @@
+""" The visualization of sentinel2 using google earth engine
+ to display NDVI map for the area of interest. """
+
 #We import the necessary packages
 import geemap
 import ee
-from .config import args
+from config import args
 def sentinel_data():
     # We define our inputs
     start_date= str(input('Enter_start_date_yy-mm-dd'))
     end_date=str(input('Enter_end_date_yy-mm-dd'))
-    lon= float(input('Enter_longitude'))
-    lat= float(input('Enter_latitude'))
+    longitude= float(input('Enter_longitude'))
+    latitude = float(input('Enter_latitude'))
     #Earth engine authentication
     ee.Authenticate()
     ee.Initialize()
     #We generate a map and center it on our lat and lon
-    Map = geemap.Map(center=[lat,lon], zoom=9)
+    Map = geemap.Map(center=[latitude,longitude], zoom=9)
     #We enter the lat and loin of the point of interest
     point=ee.Geometry.Point(33.78725,-13.96692)
-    Mapoint=ee.Geometry.Point(lat,lon)
+    #Mapoint=ee.Geometry.Point(latitude,longitude)
     #We import dataset from sentinel 2 using earth engine api and we clip our poi, filter by date and sort according to cloud coverage
     data= ee.ImageCollection("COPERNICUS/S2").filterBounds(point);
     image1=ee.Image(data.filterDate(start_date, end_date).sort("CLOUD_COVERAGE_ASSESSMENT").first());
