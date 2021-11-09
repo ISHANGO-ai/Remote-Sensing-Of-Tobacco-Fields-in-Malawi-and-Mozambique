@@ -3,6 +3,7 @@ import landsatxplore
 from landsatxplore.earthexplorer import EarthExplorer
 from landsatxplore.api import API
 import datetime
+import json
 
 
 def download_Landsat():
@@ -10,21 +11,21 @@ def download_Landsat():
     password = input('password:')
     start_date = input('date_1:') 
     end_date = input('date_2:') 
-    latitude = input('lat:')
-    longitude = input('lon:')
-    cloud_max = int(input('cloud:')) 
-    product = input('dataset:')
+    #latitude = input('lat:')
+    #longitude = input('lon:')
+   # cloud_max = int(input('cloud:')) 
+   # product = input('dataset:')
     
  
     api = landsatxplore.api.API(username,password)
  
     scenes = api.search(
-        dataset = product,
-        latitude = latitude,
-        longitude = longitude,
+        dataset = args.product,
+        latitude = args.latitude,
+        longitude = args.longitude,
         start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d"),
         end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d"),
-        max_cloud_cover = cloud_max)
+        max_cloud_cover = args.cloud_max)
  
     print('{} scenes found.'.format(len(scenes)))
     api.logout()

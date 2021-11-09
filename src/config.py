@@ -19,7 +19,7 @@ args = argparse.Namespace(
     orbitdirection = 'DESCENDING',
     cloudcoverpercentage = (0,100),
     # set the threshold of cloud cover
-    threshold_cloudcover = 10,
+    cloud_max = 30,
     # latitude of tete in mozambique
     # latitude = -16.1328104, 
     latitude = -16.1328104,
