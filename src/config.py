@@ -7,9 +7,9 @@ import argparse
 args = argparse.Namespace(
     
     # started date
-    start_date = '2018/08/25',
+    start_date = 'start_date',
     # ended date
-    end_date = '2020/08/25',
+    end_date = 'end_date',
     # name of the plateform
     platformname = 'Sentinel-2',
     # The level of the processing

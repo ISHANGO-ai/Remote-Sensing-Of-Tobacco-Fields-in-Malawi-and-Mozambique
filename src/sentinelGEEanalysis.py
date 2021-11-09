@@ -17,7 +17,7 @@ def sentinel_data():
     #We generate a map and center it on our lat and lon
     Map = geemap.Map(center=[latitude,longitude], zoom=9)
     #We enter the lat and loin of the point of interest
-    point=ee.Geometry.Point(33.78725,-13.96692)
+    point=ee.Geometry.Point(longitude,latitude)
     #Mapoint=ee.Geometry.Point(latitude,longitude)
     #We import dataset from sentinel 2 using earth engine api and we clip our poi, filter by date and sort according to cloud coverage
     data= ee.ImageCollection("COPERNICUS/S2").filterBounds(point);
