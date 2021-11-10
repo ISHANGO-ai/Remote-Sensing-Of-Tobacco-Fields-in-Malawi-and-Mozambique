@@ -9,7 +9,7 @@
   The instruction about how you can access and download the data from satellite, read on data.txt.
   1.Search and Download Sentinel 2A imagery using Sentinelsat API
 
-  1.2 Run python sentineldownload_data.py
+  1.2 '''Run python sentineldownload_data.py'''
 
   2.Search and download landsat image using landsatxplore API
 
