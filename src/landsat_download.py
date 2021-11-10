@@ -9,8 +9,8 @@ from landsatxplore.api import API
 def download_Landsat():
     username = input('username:')
     password = input('password:')
-    start_date = input('date_1:') 
-    end_date = input('date_2:') 
+    #start_date = input('date_1:') 
+    #end_date = input('date_2:') 
     #latitude = input('lat:')
     #longitude = input('lon:')
    # cloud_max = int(input('cloud:')) 
@@ -23,8 +23,8 @@ def download_Landsat():
         dataset = args.product,
         latitude = args.latitude,
         longitude = args.longitude,
-        start_date = start_date, # datetime.datetime.strptime(start_date, "%Y-%m-%d"),
-        end_date = end_date, # datetime.datetime.strptime(end_date, "%Y-%m-%d"),
+        start_date = args.start_date, # datetime.datetime.strptime(start_date, "%Y-%m-%d"),
+        end_date = args.end_date, # datetime.datetime.strptime(end_date, "%Y-%m-%d"),
         max_cloud_cover = args.cloud_max)
  
     print('{} scenes found.'.format(len(scenes)))
