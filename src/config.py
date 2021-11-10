@@ -31,9 +31,10 @@ args = argparse.Namespace(
     # your password
     password = "password",
     # geojson file
-    geojson_file = "tete.geojson",
+    footprint= "/home/jannette/Videos/Remote-Sensing-Of-Tobacco-Fields-in-Malawi-and-Mozambique/data/tete.geojson",
     #name of product of landsat data
     product = 'landsat_tm_c1' ,
+    query_style = ' footprint',#geojson file, coordinates
 
 
 )
