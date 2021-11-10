@@ -1,15 +1,18 @@
-# Access satelitte imagery (sentine1,sentinel2,sentinel3,sentinel5P, landsat, MODIS)
+# Satellite imagery analysis for land cover classification
 
-## Land cover classification
+## 1.Introduction
 
-## Measure the area
+  By using remote monitoring  and leveraging publicly available datasets, we want to differentiate and if possible classify different types of land surfaces in order to help identify areas that are more likely to include tobacco fields.
 
-## Yield estimation
+## Access satelitte imagery (sentine2A, landsat)
 
-### 1.Search and Download Sentinel 2 imagery using Sentinelsat API
+  The instruction about how you can access and download the data from satellite, read on data.txt.
+  1.Search and Download Sentinel 2A imagery using Sentinelsat API
 
-### 1.2.How to run code
+  1.2 Run python sentineldownload_data.py
 
-### 1.2.1.Download  sentinel2A data by reading the instruction in data.txt
+  2.Search and download landsat image using landsatxplore API
 
-    python sentineldownload_data.py from src
+  2.1 Run python landsat_download.py
+
+## Data visualization
