@@ -13,12 +13,12 @@ import rasterio as rio
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import plotly.graph_objects as go
-from .config import args
+#from .config import args
 
 np.seterr(divide='ignore', invalid='ignore')
 # Set input directory
-input_dir = input('Enter path+/*B?*.jp2')
-S_sentinel_bands = glob(input_dir)
+input_dir = input('Enter path')
+S_sentinel_bands = glob(input_dir + '/*B?*.jp2')
 
 S_sentinel_bands.sort()
 
@@ -31,6 +31,7 @@ for i in S_sentinel_bands:
 
 arr_st = np.stack(l)
 def ndvi_sentinel(arr_st):
+
 
     ndvi = (arr_st[3] - arr_st[2])/(arr_st[3]+arr_st[2])
     
