@@ -22,7 +22,7 @@
 
     python RGB.py
 
-## Analysis of sentinel2A, Indexes to make Vegetation Analysis Complete
+## 4. Analysis of sentinel2A, Indexes to make Vegetation Analysis Complete
 
   NDVI(Normalized Difference Vegetation Index) that are widely used to analyze vegetation but is sensitive to the effects of soil
    and atmosphere, that’s why it’s recommended to apply additional indexes for more accurate analysis of vegetation.
