@@ -1,5 +1,16 @@
+To access the sentinel data:
+
 create account (username and password) on https://scihub.copernicus.eu/dhus
 Create geojson  file by finding the area of interest  https://geojson.io/
 Choose the date frame start_date and end_date
 Chose the cloudcoverage percentage
+
+To access the landsat data:
+
+Create account(username and password) on https://earthexplorer.usgs.gov/
+
+Then go to download
+
+
+
 
