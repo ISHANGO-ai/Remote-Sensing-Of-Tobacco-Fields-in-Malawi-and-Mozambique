@@ -35,6 +35,9 @@ args = argparse.Namespace(
     #name of product of landsat data
     product = 'landsat_tm_c1' ,
     query_style = ' footprint',#geojson file, coordinates
+    L = 1,
+    C1= 6,
+    C2 = 7.5,
 
 
 )

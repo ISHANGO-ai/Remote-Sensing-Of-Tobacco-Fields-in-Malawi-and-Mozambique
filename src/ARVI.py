@@ -1,5 +1,5 @@
-"""" NDVI measures the difference between visible and near-infrared (NIR) light reflectance from vegetation to create
- a snapshot of photosynthetic vigor  """
+"""" the Atmospherically Resistant Vegetation Index is the first vegetation index, which is notrelatively prone
+ to atmospheric factors (such as aerosol) """
 #
 
 # we collect te coordinates of our AOI the start and the end date of times serisies selected
@@ -15,7 +15,8 @@ import rasterio as rio
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import plotly.graph_objects as go
-#from .config import args
+from math import*
+from config import args
 
 np.seterr(divide='ignore', invalid='ignore')
 # Set input directory
@@ -34,16 +35,16 @@ for i in S_sentinel_bands:
         l.append(f.read(1))
 
 arr_st = np.stack(l)
-def ndvi_sentinel(arr_st):
+def arvi_sentinel(band):
 
 
-    ndvi = (arr_st[3] - arr_st[2])/(arr_st[3]+arr_st[2])
+    arvi = ((band[3] - (2*band[2])+band[0]))/((band[3]+(2*band[2])+band[0]))
     
-    return ndvi
+    return arvi
 
 
-NDVI =ndvi_sentinel(arr_st)
+ARVI =arvi_sentinel(arr_st)
 
-ep.plot_bands(NDVI, cmap="RdYlGn", cols=1, vmin=-1, vmax=1, figsize=(10, 14),title = 'Sentinel2A - Normalized Difference Vegetation Index (NDVI)') 
+ep.plot_bands(ARVI, cmap="RdYlGn", cols=1, vmin=-1, vmax=1, figsize=(10, 14),title = 'Sentinel2A - ARVI') 
 
 plt.show()
