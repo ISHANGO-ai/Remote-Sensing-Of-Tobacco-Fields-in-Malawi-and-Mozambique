@@ -7,6 +7,7 @@
 ## Access satelitte imagery (sentine2A, landsat)
 
   The instruction about how you can access and download the data from satellite, read on data.txt.
+
   1.Search and Download Sentinel 2A imagery using Sentinelsat API
 
     python sentineldownload_data.py
@@ -15,4 +16,8 @@
 
     python landsat_download.py
 
-## Data visualization
+## Data visualization the bands
+
+    python visualize.py
+
+## Analysis of sentinel2A
