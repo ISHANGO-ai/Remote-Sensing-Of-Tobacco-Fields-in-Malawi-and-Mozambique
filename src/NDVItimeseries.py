@@ -18,7 +18,6 @@ import pandas as pd
 #from tslearn.utils import to_time_series_dataset
 
 ee.Initialize()
-
 # we collect te coordinates of our AOI the start and the end date of times series selected
 months = ee.List.sequence(1,12)
 years = ee.List.sequence(2018, 2019)

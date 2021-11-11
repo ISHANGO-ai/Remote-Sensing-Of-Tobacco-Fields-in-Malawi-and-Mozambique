@@ -4,7 +4,7 @@
 #We import the necessary packages
 import geemap
 import ee
-from config import args
+#from config import args
 def sentinel_data():
     # We define our inputs
     start_date= str(input('Enter_start_date_yy-mm-dd'))
