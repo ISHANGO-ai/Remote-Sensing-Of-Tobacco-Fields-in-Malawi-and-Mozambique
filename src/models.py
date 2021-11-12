@@ -1,5 +1,6 @@
 import numpy
-from .config import args
+#from config import args
+
 import ee
 import geemap
 import pandas as pd
