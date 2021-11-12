@@ -79,7 +79,7 @@
 
   Import dataset from sentinel 2 using earth engine api and we clip our point of interest
   filter by date and sort according to cloud coverage. We now select the bands to compute the true colour map
-  From the first data we selects the bands to generate the ndvi
+  From the first data we selects the bands to generate the ndvi.We have to authenticate first on Google Earth Engine AP to get access
   Display on the map
 
     Run python sentinelGEEanalysis.py
@@ -87,6 +87,7 @@
 ## 6. Random forest classifier model
 
   Train a random forest locally using scikit-learn, to get land cover classes
-  where are able to classify between vegetation, bare soil and water.
+  where are able to classify between vegetation, bare soil and water.We have to authenticate first on Google Earth Engine AP to get access
+  Display on the map
 
     Run train.py
