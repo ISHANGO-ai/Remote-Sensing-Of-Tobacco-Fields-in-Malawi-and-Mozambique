@@ -83,4 +83,3 @@
   Display on the map
 
     Run python sentinelGEEanalysis.py
-
