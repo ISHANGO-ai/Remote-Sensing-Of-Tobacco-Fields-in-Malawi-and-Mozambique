@@ -1,3 +1,5 @@
+""" Randomforst classifier to train model"""
+
 import numpy
 #from config import args
 
