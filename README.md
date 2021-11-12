@@ -83,3 +83,10 @@
   Display on the map
 
     Run python sentinelGEEanalysis.py
+
+## 6. Random forest classifier model
+
+  Train a random forest locally using scikit-learn, to get land cover classes
+  where are able to classify between vegetation, bare soil and water.
+
+    Run train.py
