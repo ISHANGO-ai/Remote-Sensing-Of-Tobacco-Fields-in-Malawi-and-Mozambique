@@ -88,7 +88,10 @@
 ## 6. Random forest classifier model
 
   Train a random forest locally using scikit-learn, to get land cover classes
-  where are able to classify between vegetation, bare soil and water.We have to authenticate first on Google Earth Engine AP to get access.  Display on the classifiction map
+  where are able to classify between vegetation, bare soil and water.
+  We used the demo land cover labels dataset from google earth engine,see csv file at data folder
+  We have to authenticate first on Google Earth Engine AP to get access.  
+  Display on the classifiction map
 
     Run train.py
 
