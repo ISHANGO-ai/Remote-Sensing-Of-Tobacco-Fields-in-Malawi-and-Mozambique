@@ -1,7 +1,7 @@
 """ NDVI time series using google earth engine
  using point of interest from land classification map in the model.py for class"""
 
-#from config import args
+
 import ee
 import folium
 #import geemap
@@ -14,8 +14,7 @@ from ipygee import chart
 from ipygee import*
 #import math
 import pandas as pd
-#from tslearn.clustering import TimeSeriesKMeans
-#from tslearn.utils import to_time_series_dataset
+
 ee.Authenticate()
 ee.Initialize()
 # we collect te coordinates of our AOI the start and the end date of times series selected
