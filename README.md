@@ -22,8 +22,9 @@
 
     Run python RGB.py
 
-## 4. Analysis of sentinel2A, Indexes to make Vegetation Analysis Complete
+## 4. Analysis of sentinel2A, Indices to make Vegetation Analysis Complete
 
+  The use of remote sensing indices in order to obtain information for vegetation distributions, heath and patterns is a popular practice with applicability at different scales of detail.
   NDVI(Normalized Difference Vegetation Index) that are widely used to analyze vegetation but is sensitive to the effects of soil
    and atmosphere, that’s why it’s recommended to apply additional indexes for more accurate analysis of vegetation.
 
@@ -87,7 +88,14 @@
 ## 6. Random forest classifier model
 
   Train a random forest locally using scikit-learn, to get land cover classes
-  where are able to classify between vegetation, bare soil and water.We have to authenticate first on Google Earth Engine AP to get access
-  Display on the map
+  where are able to classify between vegetation, bare soil and water.We have to authenticate first on Google Earth Engine AP to get access.  Display on the classifiction map
 
     Run train.py
+
+## Plot Normalised Difference Vegetation Index (NDVI) time series for AOI for each class of land cover
+
+  Monthly NDVI time series that represent a complete crop phonological cycle
+  NDVI method is applied according to its specialty range from –1 to +1
+  We have to authenticate first on Google Earth Engine AP to get access
+
+    Run NDVItimeseries.py
