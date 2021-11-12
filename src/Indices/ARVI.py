@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import plotly.graph_objects as go
 from math import*
-from config import args
+#from config import args
 
 np.seterr(divide='ignore', invalid='ignore')
 # Set input directory

@@ -3,6 +3,12 @@ for atmospheric influences and soil background signals,
 especially in areas of dense canopy."""
 #
 
+import sys
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+from config import args
 # we collect te coordinates of our AOI the start and the end date of times serisies selected
 
 import glob
@@ -17,7 +23,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import plotly.graph_objects as go
 from math import*
-from config import args
+
 
 np.seterr(divide='ignore', invalid='ignore')
 # Set input directory
