@@ -74,3 +74,13 @@
   The Structure Insensitive Pigment Index is good for analysis of vegetation with the variable canopy structure. It estimates the ratio of carotenoids to chlorophyll: the increased value signals of stressed vegetation. SIPI = (NIR – Blue) / (NIR – Red)
 
     python SIPI.py
+
+## 5.Analysis of Sentinel in ptyhon with Google Earth Engine AP
+
+  Import dataset from sentinel 2 using earth engine api and we clip our point of interest
+  filter by date and sort according to cloud coverage. We now select the bands to compute the true colour map
+  From the first data we selects the bands to generate the ndvi
+  Display on the map
+
+    Run python sentinelGEEanalysis.py
+
