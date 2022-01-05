@@ -5,6 +5,7 @@ especially in areas of dense canopy."""
 
 import sys
 import os
+import numpy
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
